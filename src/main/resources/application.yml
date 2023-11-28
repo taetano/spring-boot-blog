@@ -2,6 +2,13 @@ spring:
   main:
     banner-mode: off
 
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  h2:
+    console:
+      enabled: true
+
   jpa:
     show-sql: true
     properties:
