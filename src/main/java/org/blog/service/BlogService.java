@@ -16,6 +16,7 @@ import java.util.List;
 public class BlogService {
     private final BlogRepository blogRepository;
 
+    @Transactional
     public Article save(final AddArticleRequest request) {
         return blogRepository.save(request.toEntity());
     }
@@ -28,6 +29,7 @@ public class BlogService {
         return blogRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
     }
+    @Transactional
     public void delete(final long id) {
         blogRepository.deleteById(id);
     }
