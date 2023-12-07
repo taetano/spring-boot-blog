@@ -18,6 +18,16 @@ spring:
     defer-datasource-initialization: true
     open-in-view: false
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            scope:
+              - email
+              - profile
 jwt:
   issuer: choi@gmail.com
   secret_key: study-spring
